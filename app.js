@@ -5,8 +5,6 @@ const _ = require("lodash");
 
 const app = express();
 
-app.set("views", "./Views");
-
 app.set("view engine", "ejs");
 
 app.use(
@@ -14,7 +12,7 @@ app.use(
         extended: true,
     })
 );
-app.use(express.static("Public"));
+app.use(express.static("public"));
 
 mongoose.connect("mongodb://admin-rahul:rahul1999@cluster0-shard-00-00.1gwj9.mongodb.net:27017,cluster0-shard-00-01.1gwj9.mongodb.net:27017,cluster0-shard-00-02.1gwj9.mongodb.net:27017/todolistDB?ssl=true&replicaSet=atlas-e86syn-shard-0&authSource=admin&retryWrites=true&w=majority", { useNewUrlParser: true });
 
